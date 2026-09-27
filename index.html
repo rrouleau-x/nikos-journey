@@ -18,6 +18,8 @@
     --card:#ffffff;
     --win:#1e7d3c;
     --win-bg:#e6f4ea;
+    --loss:#b3261e;
+    --loss-bg:#fdecea;
     --loss:#b3382c;
     --loss-bg:#fbeae8;
   }
@@ -136,11 +138,13 @@
   td.num{font-variant-numeric:tabular-nums;white-space:nowrap;}
   .res{font-weight:800;white-space:nowrap;}
   .res.w{color:var(--win);}
+  .res.l{color:var(--loss);}
   .badge{
     display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;
     border-radius:999px;padding:3px 10px;white-space:nowrap;
   }
   .badge.w{background:var(--win-bg);color:var(--win);}
+  .badge.l{background:var(--loss-bg);color:var(--loss);}
   .badge.up{background:#eef1f6;color:var(--ink-soft);}
   .badge.champ{background:var(--gold-light);color:#7a5c12;}
   .stat-chip{
@@ -228,14 +232,14 @@
     </div>
 
     <div class="stats">
-      <div class="stat"><div class="num">7&ndash;0&ndash;0</div><div class="lbl">Wins &ndash; Losses &ndash; Ties</div></div>
-      <div class="stat green"><div class="num">43 : 18</div><div class="lbl">Goals For : Against</div></div>
+      <div class="stat"><div class="num">6&ndash;1&ndash;0</div><div class="lbl">Wins &ndash; Losses &ndash; Ties</div></div>
+      <div class="stat green"><div class="num">42 : 19</div><div class="lbl">Goals For : Against</div></div>
       <div class="stat gold"><div class="num">+23</div><div class="lbl">Goal Differential</div></div>
       <div class="stat"><div class="num">1</div><div class="lbl">Tournament Title</div></div>
-      <div class="stat wide"><div class="num">100%</div><div class="lbl">Win Percentage</div></div>
+      <div class="stat wide"><div class="num">86%</div><div class="lbl">Win Percentage</div></div>
     </div>
 
-    <p class="career-note">Every game Niko has played this season: five with Savannah United 17/18B Premier &mdash; three at the Sporting Jax Invitational (23:7) and two at the Sep 26 1-Day Festival (9:5) &mdash; plus two as a guest for Savannah United U9 Boys Blue on Sep 19 (11:6). A Sep 12 festival game was also played by his team with no score recorded. Scores and opponents verified against PlayMetrics Sep 26, 2026.</p>
+    <p class="career-note">Every game Niko has played this season: five with Savannah United 17/18B Premier &mdash; three at the Sporting Jax Invitational (23:7) and two at the Sep 26 1-Day Festival (8:6) &mdash; plus two as a guest for Savannah United U9 Boys Blue on Sep 19 (11:6). A Sep 12 festival game was also played by his team with no score recorded. Scores and opponents verified against PlayMetrics Sep 26, 2026.</p>
 
     <div class="card">
       <h3>Sporting Jax Boys Invitational
@@ -309,7 +313,7 @@
 
     <div class="card">
       <h3>1-Day Festival
-        <span class="badge w" style="margin-left:auto;">2 WINS</span>
+        <span class="badge l" style="margin-left:auto;">1 LOSS &middot; 1 WIN</span>
       </h3>
       <div class="meta">U9 Boys Premier &middot; 7v7 &middot; Savannah, GA &middot; Sep 26, 2026 &middot; Jennifer Ross Soccer Complex</div>
       <div class="table-wrap">
@@ -321,7 +325,7 @@
             <tr class="hl">
               <td class="num">G1</td><td class="num">Sat 9/26</td><td class="num c-time">1:00 PM</td>
               <td>Sporting Jax U9B ECNL Dev 2 (B)</td>
-              <td class="res w">W 3&ndash;2</td>
+              <td class="res l">L 2&ndash;3</td>
               <td><span class="stat-chip">1 goal</span></td><td class="num c-field">2A</td>
             </tr>
             <tr class="hl">
@@ -333,7 +337,7 @@
           </tbody>
         </table>
       </div>
-      <p class="career-note" style="margin-top:10px;">Played for his own side, <strong>Savannah United 17/18B Premier</strong> &mdash; both games at Jennifer Ross Soccer Complex. Niko's 1 goal came in the 1:00 PM game and 2 more in the 3:30 PM game, reported from the sideline Sep 26, 2026; opponents, times and fields cross-checked against PlayMetrics events 5244935 and 5244941 (team 586337).</p>
+      <p class="career-note" style="margin-top:10px;">Played for his own side, <strong>Savannah United 17/18B Premier</strong> &mdash; both games at Jennifer Ross Soccer Complex. Niko's 1 goal came in the 1:00 PM game and 2 more in the 3:30 PM game. <strong>Corrected Sep 26, 2026:</strong> the 1:00 PM game was a <strong>3&ndash;2 loss</strong> (Savannah United scored 2, conceding 3), not a win &mdash; the first entry had the score the wrong way round. The record, goals-for/against and win percentage above are recalculated. opponents, times and fields cross-checked against PlayMetrics events 5244935 and 5244941 (team 586337).</p>
     </div>
 
   </section>
@@ -504,7 +508,7 @@
               <td class="num" style="font-weight:700;">Fall 2026</td>
               <td>Savannah United 17/18B Premier</td>
               <td class="num c-mobilehide">U9</td>
-              <td class="num res w">7&ndash;0&ndash;0</td>
+              <td class="num res" style="color:var(--ink);">6&ndash;1&ndash;0</td>
               <td class="num">10</td>
               <td class="num">3</td>
               <td class="num">13</td>
