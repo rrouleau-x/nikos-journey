@@ -468,12 +468,12 @@
 
     <div class="niko-cards rate-cards">
       <div class="niko"><div class="num" data-stat="games">14</div><div class="lbl">Games Played</div></div>
+      <div class="niko"><div class="num" data-stat="halves">28</div><div class="lbl">Halves Played</div></div>
       <div class="niko"><div class="num" data-stat="gpg">1.79</div><div class="lbl">Goals / Game</div></div>
-      <div class="niko"><div class="num" data-stat="gpm">0.030</div><div class="lbl">Goals / Minute</div></div>
-      <div class="niko"><div class="num" data-stat="mpg">33.6</div><div class="lbl">Minutes / Goal</div></div>
-      <div class="niko"><div class="num" data-stat="p90">2.68</div><div class="lbl">Goals / 90 min</div></div>
+      <div class="niko"><div class="num" data-stat="gph">0.893</div><div class="lbl">Goals / Half</div></div>
+      <div class="niko"><div class="num" data-stat="hpg">1.12</div><div class="lbl">Halves / Goal</div></div>
     </div>
-    <p class="rate-note">Rates assume every game is 2 &times; 30-minute halves (60 minutes) and that Niko played the full game. Rates recalculate automatically from the Games Played, Goals and Assists figures above.</p>
+    <p class="rate-note">Rates assume every game is 2 halves (2 &times; 30 minutes) and that Niko played both. A goal every 1.12 halves works out to a goal in roughly every other half he plays. Rates recalculate automatically from the Games Played, Goals and Assists figures above.</p>
 
     <div class="card">
       <h3>Season Scoring Log</h3>
@@ -810,7 +810,7 @@
   if (!d) return;
   var games = +d.dataset.games, goals = +d.dataset.goals, assists = +d.dataset.assists;
   var half = +d.dataset.halfMinutes;
-  var minutes = games * half * 2;
+  var halves = games * 2;
   var set = function (k, v) {
     document.querySelectorAll('[data-stat="' + k + '"]').forEach(function (el) { el.textContent = v; });
   };
@@ -818,10 +818,10 @@
   set('goals', goals);
   set('assists', assists);
   set('points', goals + assists);
+  set('halves', halves);
   set('gpg', games ? (goals / games).toFixed(2) : '0.00');
-  set('gpm', minutes ? (goals / minutes).toFixed(3) : '0.000');
-  set('mpg', goals ? (minutes / goals).toFixed(1) : '\u2014');
-  set('p90', minutes ? (goals / minutes * 90).toFixed(2) : '0.00');
+  set('gph', halves ? (goals / halves).toFixed(3) : '0.000');
+  set('hpg', goals ? (halves / goals).toFixed(2) : '\u2014');
 })();
 </script>
 
