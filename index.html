@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Niko R. - Savannah United 17/18B Premier, Fall 2026. 14 games, 12-2-0, 83 goals for, 27 goals, 6 assists, 2 tournament titles. Full game log, scoring log and career record.">
+<meta name="theme-color" content="#0055A4">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Niko's Soccer Journey - 2026 Season">
+<meta property="og:description" content="14 games, 12-2-0, 83 goals for, 27 goals and 6 assists. Two tournament titles. The full Fall 2026 game log and scoring record.">
+<meta property="og:url" content="https://rrouleau-x.github.io/nikos-journey/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Niko's Soccer Journey - 2026 Season">
+<meta name="twitter:description" content="14 games, 12-2-0, 83 goals for, 27 goals and 6 assists. Two tournament titles.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230055A4'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M16 8l3.2 6.2h-6.4z' fill='%23fff'/%3E%3C/svg%3E">
 <title>Niko's Soccer Journey · 2026 Season</title>
 <style>
   :root{
@@ -18,8 +28,6 @@
     --card:#ffffff;
     --win:#1e7d3c;
     --win-bg:#e6f4ea;
-    --loss:#b3261e;
-    --loss-bg:#fdecea;
     --loss:#b3382c;
     --loss-bg:#fbeae8;
   }
@@ -198,6 +206,21 @@
     font-weight:700;color:var(--su-blue);letter-spacing:.06em;
   }
   footer .small{font-size:12px;margin-top:6px;opacity:.85;}
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    body{background:#fff;color:#000;}
+    .hero{background:#fff !important;color:#000;padding:16px 0;}
+    .hero::after{display:none;}
+    .hero .year,.hero .club{color:#000;border-color:#000;}
+    .hero .sub{color:#333;}
+    .stat,.card,.niko{box-shadow:none;border-color:#bbb;}
+    .sec-bar{background:#000;}
+    a{text-decoration:none;color:#000;}
+    .card{page-break-inside:avoid;}
+    section{margin-top:18px;}
+    footer{margin-top:20px;}
+  }
 </style>
 </head>
 <body>
@@ -238,11 +261,11 @@
     </div>
 
     <div class="stats">
-      <div class="stat"><div class="num">12&ndash;2&ndash;0</div><div class="lbl">Wins &ndash; Losses &ndash; Ties</div></div>
-      <div class="stat green"><div class="num">83 : 32</div><div class="lbl">Goals For : Against</div></div>
-      <div class="stat gold"><div class="num">+51</div><div class="lbl">Goal Differential</div></div>
-      <div class="stat"><div class="num">2</div><div class="lbl">Tournament Titles</div></div>
-      <div class="stat wide"><div class="num">86%</div><div class="lbl">Win Percentage</div></div>
+      <div class="stat"><div class="num" data-stat="record">12–2–0</div><div class="lbl">Wins &ndash; Losses &ndash; Ties</div></div>
+      <div class="stat green"><div class="num" data-stat="gfga">83 : 32</div><div class="lbl">Goals For : Against</div></div>
+      <div class="stat gold"><div class="num" data-stat="diff">+51</div><div class="lbl">Goal Differential</div></div>
+      <div class="stat"><div class="num" data-stat="titles">2</div><div class="lbl">Tournament Titles</div></div>
+      <div class="stat wide"><div class="num" data-stat="winpct">86%</div><div class="lbl">Win Percentage</div></div>
     </div>
 
     <p class="career-note">Every game Niko has played this season: twelve with Savannah United 17/18B Premier &mdash; three at the Sporting Jax Invitational (23:7), two at the Sep 26 1-Day Festival (8:6), three at the Carolina Cup (17:6, <strong>champions</strong>), two at the Macon 1-Day Festival (9:7) and two at the Oct 24 United Soccer Alliance festival on Jekyll Island (15:0) &mdash; plus two as a guest for Savannah United U9 Boys Blue on Sep 19 (11:6). A Sep 12 festival game was also played by his team with no score recorded. Scores and opponents for every event were verified against PlayMetrics; the Carolina Cup results were reported live from the sideline, October 3&ndash;4, 2026, and the Macon results on October 17, 2026 and the Jekyll Island results on October 24, 2026.</p>
@@ -458,19 +481,20 @@
 
     <!-- UPDATE AFTER EACH GAME: edit ONLY the three data-* values below
          (data-games, data-goals, data-assists). Every card and rate recalculates. -->
-    <div id="niko-stats-data" data-games="14" data-goals="25" data-assists="6"></div>
+    <div id="niko-stats-data" data-games="14" data-goals="27" data-assists="6" data-wins="12" data-losses="2" data-ties="0" data-gf="83" data-ga="32" data-titles="2"></div>
 
     <div class="niko-cards">
-      <div class="niko"><div class="num" data-stat="goals">25</div><div class="lbl">Goals</div></div>
+      <div class="niko"><div class="num" data-stat="goals">27</div><div class="lbl">Goals</div></div>
       <div class="niko"><div class="num" data-stat="assists">6</div><div class="lbl">Assists</div></div>
-      <div class="niko"><div class="num" data-stat="points">31</div><div class="lbl">Points</div></div>
+      <div class="niko"><div class="num" data-stat="points">33</div><div class="lbl">Points</div></div>
     </div>
 
     <div class="niko-cards rate-cards">
       <div class="niko"><div class="num" data-stat="games">14</div><div class="lbl">Games Played</div></div>
-      <div class="niko"><div class="num" data-stat="gpg">1.79</div><div class="lbl">Goals / Game</div></div>
+      <div class="niko"><div class="num" data-stat="gpg">1.93</div><div class="lbl">Goals / Game</div></div>
     </div>
     <p class="rate-note">Goals per game = goals &divide; games played. Recalculates automatically from the Games Played, Goals and Assists figures above &mdash; after each game, update only those three numbers.</p>
+    <p class="career-note"><strong>Corrected Oct 27, 2026:</strong> the season goal total was showing <strong>25</strong>. The game-by-game scoring log on this page sums to <strong>27 goals</strong> (and 6 assists, 33 points), so the headline total, goals-per-game and the career row are corrected here. Individual game entries were not changed.</p>
 
     <div class="card">
       <h3>Season Scoring Log</h3>
@@ -684,11 +708,11 @@
               <td class="num" style="font-weight:700;">Fall 2026</td>
               <td>Savannah United 17/18B Premier</td>
               <td class="num c-mobilehide">U9</td>
-              <td class="num res" style="color:var(--ink);">12&ndash;2&ndash;0</td>
-              <td class="num">25</td>
-              <td class="num">6</td>
-              <td class="num">31</td>
-              <td class="c-mobilehide"><span class="badge champ">2</span></td>
+              <td class="num res" style="color:var(--ink);" data-stat="record">12–2–0</td>
+              <td class="num" data-stat="goals">27</td>
+              <td class="num" data-stat="assists">6</td>
+              <td class="num" data-stat="points">33</td>
+              <td class="c-mobilehide"><span class="badge champ" data-stat="titles">2</span></td>
             </tr>
           </tbody>
         </table>
@@ -806,7 +830,8 @@
   var d = document.getElementById('niko-stats-data');
   if (!d) return;
   var games = +d.dataset.games, goals = +d.dataset.goals, assists = +d.dataset.assists;
-  var half = +d.dataset.halfMinutes;
+  var wins = +d.dataset.wins, losses = +d.dataset.losses, ties = +d.dataset.ties;
+  var gf = +d.dataset.gf, ga = +d.dataset.ga, titles = +d.dataset.titles;
   var set = function (k, v) {
     document.querySelectorAll('[data-stat="' + k + '"]').forEach(function (el) { el.textContent = v; });
   };
@@ -815,6 +840,11 @@
   set('assists', assists);
   set('points', goals + assists);
   set('gpg', games ? (goals / games).toFixed(2) : '0.00');
+  set('record', wins + '\u2013' + losses + '\u2013' + ties);
+  set('gfga', gf + ' : ' + ga);
+  set('diff', (gf - ga > 0 ? '+' : '') + (gf - ga));
+  set('titles', titles);
+  set('winpct', games ? Math.round(wins / games * 100) + '%' : '\u2014');
 })();
 </script>
 
