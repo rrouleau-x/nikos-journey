@@ -155,8 +155,8 @@
   /* ---------- NIKO ---------- */
   .niko-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;}
   @media(max-width:560px){.niko-cards{grid-template-columns:repeat(3,1fr);gap:10px;}}
-  .niko-cards.rate-cards{grid-template-columns:repeat(5,1fr);margin-top:12px;}
-  @media(max-width:760px){.niko-cards.rate-cards{grid-template-columns:repeat(3,1fr);}}
+  .niko-cards.rate-cards{grid-template-columns:repeat(2,1fr);margin-top:12px;max-width:420px;}
+  @media(max-width:760px){.niko-cards.rate-cards{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:560px){.niko-cards.rate-cards{grid-template-columns:repeat(2,1fr);}}
   .rate-cards .niko{padding:14px 8px;}
   .rate-cards .niko .num{font-size:26px;}
@@ -458,7 +458,7 @@
 
     <!-- UPDATE AFTER EACH GAME: edit ONLY the three data-* values below
          (data-games, data-goals, data-assists). Every card and rate recalculates. -->
-    <div id="niko-stats-data" data-games="14" data-goals="25" data-assists="6" data-half-minutes="30"></div>
+    <div id="niko-stats-data" data-games="14" data-goals="25" data-assists="6"></div>
 
     <div class="niko-cards">
       <div class="niko"><div class="num" data-stat="goals">25</div><div class="lbl">Goals</div></div>
@@ -468,12 +468,9 @@
 
     <div class="niko-cards rate-cards">
       <div class="niko"><div class="num" data-stat="games">14</div><div class="lbl">Games Played</div></div>
-      <div class="niko"><div class="num" data-stat="halves">28</div><div class="lbl">Halves Played</div></div>
       <div class="niko"><div class="num" data-stat="gpg">1.79</div><div class="lbl">Goals / Game</div></div>
-      <div class="niko"><div class="num" data-stat="gph">0.893</div><div class="lbl">Goals / Half</div></div>
-      <div class="niko"><div class="num" data-stat="hpg">1.12</div><div class="lbl">Halves / Goal</div></div>
     </div>
-    <p class="rate-note">Rates assume every game is 2 halves (2 &times; 30 minutes) and that Niko played both. A goal every 1.12 halves works out to a goal in roughly every other half he plays. Rates recalculate automatically from the Games Played, Goals and Assists figures above.</p>
+    <p class="rate-note">Goals per game = goals &divide; games played. Recalculates automatically from the Games Played, Goals and Assists figures above &mdash; after each game, update only those three numbers.</p>
 
     <div class="card">
       <h3>Season Scoring Log</h3>
@@ -810,7 +807,6 @@
   if (!d) return;
   var games = +d.dataset.games, goals = +d.dataset.goals, assists = +d.dataset.assists;
   var half = +d.dataset.halfMinutes;
-  var halves = games * 2;
   var set = function (k, v) {
     document.querySelectorAll('[data-stat="' + k + '"]').forEach(function (el) { el.textContent = v; });
   };
@@ -818,10 +814,7 @@
   set('goals', goals);
   set('assists', assists);
   set('points', goals + assists);
-  set('halves', halves);
   set('gpg', games ? (goals / games).toFixed(2) : '0.00');
-  set('gph', halves ? (goals / halves).toFixed(3) : '0.000');
-  set('hpg', goals ? (halves / goals).toFixed(2) : '\u2014');
 })();
 </script>
 
